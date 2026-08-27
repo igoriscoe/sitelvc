@@ -1,26 +1,41 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* ─── Fontes (variáveis injetadas pelo next/font na tag <html>) ─── */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);        /* texto padrão */
+  --font-heading: var(--font-outfit);    /* títulos e destaques */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ─── Paleta de cores do projeto ──────────────────────────────── */
+@theme {
+  /* Teal — identidade científica principal */
+  --color-primary-50:  #EDF7F8;
+  --color-primary-100: #D4EEF1;
+  --color-primary-200: #A8DDE3;
+  --color-primary-400: #3AABB8;
+  --color-primary-600: #1590A3;
+  --color-primary-700: #117A8B;
+  --color-primary-800: #0E6878;
+  --color-primary-900: #0C5460;
+
+  /* Âmbar — destaque e CTA */
+  --color-accent-100: #FAE9D2;
+  --color-accent-400: #D4934A;
+  --color-accent-500: #CC8840;
+  --color-accent-600: #C07833;
+  --color-accent-700: #A06228;
+
+  /* Superfície alternada */
+  --color-surface: #F4F8FA;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ─── Estilos base ──────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-outfit, ui-sans-serif, sans-serif);
+}
+
+/* Foco visível acessível */
+:focus-visible {
+  outline: 2px solid #117A8B;
+  outline-offset: 2px;
 }
