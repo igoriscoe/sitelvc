@@ -1,12 +1,17 @@
 /**
  * Conteúdo programático do curso.
  * Organizado por módulos teóricos e práticos.
- * Substitua os placeholders com o conteúdo definitivo.
  */
 
 export interface CurriculumTopic {
   title: string;
-  description?: string;
+}
+
+export interface CurriculumSection {
+  title: string;
+  /** Título da atividade dentro da turma, quando diferente do módulo principal */
+  subtitle?: string;
+  topics: CurriculumTopic[];
 }
 
 export interface CurriculumModule {
@@ -15,7 +20,10 @@ export interface CurriculumModule {
   title: string;
   description?: string;
   workload?: string;
-  topics: CurriculumTopic[];
+  /** Tópicos simples sem subdivisão */
+  topics?: CurriculumTopic[];
+  /** Sub-seções com título próprio e tópicos */
+  sections?: CurriculumSection[];
 }
 
 export const curriculum: CurriculumModule[] = [

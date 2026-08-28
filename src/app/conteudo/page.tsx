@@ -133,22 +133,49 @@ function ModuleCard({
           <p className="text-sm text-slate-500 mt-1">{mod.description}</p>
         )}
       </div>
-      <ul className="px-5 py-3 space-y-2">
-        {mod.topics.map((topic, i) => (
-          <li
-            key={i}
-            className="flex items-start gap-3 text-sm text-slate-600"
-          >
-            <span
-              className={`w-1.5 h-1.5 rounded-full flex-shrink-0 mt-2 ${
-                accent ? "bg-accent-400" : "bg-primary-400"
-              }`}
-              aria-hidden="true"
-            />
-            {topic.title}
-          </li>
-        ))}
-      </ul>
+      {mod.sections ? (
+        <div className="px-5 py-3 space-y-4">
+          {mod.sections.map((section, si) => (
+            <div key={si} className={si > 0 ? "pt-3 border-t border-slate-100" : ""}>
+              <p className={`text-xs font-bold uppercase tracking-wider mb-1 ${
+                accent ? "text-accent-700" : "text-primary-700"
+              }`}>
+                {section.title}
+              </p>
+              {section.subtitle && (
+                <p className="text-sm font-semibold text-slate-700 mb-2">{section.subtitle}</p>
+              )}
+              <ul className="space-y-1.5">
+                {section.topics.map((topic, ti) => (
+                  <li key={ti} className="flex items-start gap-3 text-sm text-slate-600">
+                    <span
+                      className={`w-1.5 h-1.5 rounded-full flex-shrink-0 mt-2 ${
+                        accent ? "bg-accent-400" : "bg-primary-400"
+                      }`}
+                      aria-hidden="true"
+                    />
+                    {topic.title}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <ul className="px-5 py-3 space-y-2">
+          {(mod.topics ?? []).map((topic, i) => (
+            <li key={i} className="flex items-start gap-3 text-sm text-slate-600">
+              <span
+                className={`w-1.5 h-1.5 rounded-full flex-shrink-0 mt-2 ${
+                  accent ? "bg-accent-400" : "bg-primary-400"
+                }`}
+                aria-hidden="true"
+              />
+              {topic.title}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }
