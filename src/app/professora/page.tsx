@@ -62,10 +62,9 @@ function InstructorCard({ instructor, index }: { instructor: Instructor; index: 
               {instructor.name}
             </h2>
             <p className="font-semibold text-slate-700 text-sm">{instructor.institution}</p>
-            <p className="text-slate-500 text-sm mt-0.5">{instructor.department}</p>
           </div>
 
-          <p className="text-slate-600 leading-relaxed">{instructor.fullBio}</p>
+          <p className="text-slate-600 leading-relaxed">{instructor.shortBio}</p>
 
           {/* Formação */}
           <section aria-labelledby={`formacao-${index}`}>

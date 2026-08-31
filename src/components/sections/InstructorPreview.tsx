@@ -82,9 +82,6 @@ export default function InstructorPreview() {
               <p className="text-slate-600 font-medium text-sm">
                 {coordinator.institution}
               </p>
-              <p className="text-slate-400 text-sm">
-                {coordinator.department}
-              </p>
             </div>
 
             <p className="text-slate-700 leading-relaxed mb-6 text-sm">
