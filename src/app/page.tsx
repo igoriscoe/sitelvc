@@ -3,6 +3,7 @@ import CourseOverview from "@/components/sections/CourseOverview";
 import CoursePillars from "@/components/sections/CoursePillars";
 import TheoryAndPractice from "@/components/sections/TheoryAndPractice";
 import InstructorPreview from "@/components/sections/InstructorPreview";
+import InstitutionalPartners from "@/components/sections/InstitutionalPartners";
 import NextEditionSection from "@/components/sections/NextEditionSection";
 import FAQPreview from "@/components/sections/FAQPreview";
 import FinalCTA from "@/components/sections/FinalCTA";
@@ -15,6 +16,7 @@ export default function HomePage() {
       <CoursePillars />
       <TheoryAndPractice />
       <InstructorPreview />
+      <InstitutionalPartners />
       <NextEditionSection />
       <FAQPreview />
       <FinalCTA />
