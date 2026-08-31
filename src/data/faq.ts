@@ -20,7 +20,7 @@ export const faqItems: FAQItem[] = [
     id: "pre-requisitos",
     question: "Existem pré-requisitos para participar?",
     answer:
-      "Possuir CRMV ativo e experiência prévia em clínica de pequenos animais. Para participação nas atividades práticas, poderão ser estabelecidos pré-requisitos específicos conforme a natureza dos procedimentos realizados.",
+      "Os profissionais devem possuir CRMV ativo e alguma experiência prévia em clínica de pequenos animais. Para participação nas atividades práticas, poderão ser estabelecidos pré-requisitos específicos conforme a natureza dos procedimentos realizados.",
   },
   {
     id: "parte-pratica",

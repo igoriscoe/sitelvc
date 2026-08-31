@@ -16,7 +16,7 @@ export default function Hero() {
         <div className="absolute top-1/2 left-1/3 w-64 h-64 rounded-full bg-primary-600/10" />
       </div>
 
-      {/* Imagem — metade direita, borda esquerda com máscara elíptica */}
+      {/* Imagem — desktop */}
       <div
         className="absolute top-0 right-0 bottom-0 w-1/2 hidden lg:block"
         aria-hidden="true"
@@ -29,7 +29,7 @@ export default function Hero() {
       >
         <Image
           src="/cao2.png"
-          alt="Atividade prática do curso de Leishmaniose Visceral Canina"
+          alt=""
           fill
           className="object-cover"
           sizes="50vw"
@@ -37,7 +37,8 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 lg:py-32">
+      {/* Conteúdo principal */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-20 lg:py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           {/* Conteúdo textual */}
@@ -65,9 +66,15 @@ export default function Hero() {
 
             {/* Botões */}
             <div className="flex flex-col sm:flex-row gap-3">
-              <CTAButton href="/o-curso" variant="outline" size="lg" inverted>
+              <CTAButton
+                href="/o-curso"
+                variant="outline"
+                size="lg"
+                inverted
+              >
                 Conheça o curso
               </CTAButton>
+
               <CTAButton href="/turmas" variant="primary" size="lg">
                 Inscreva-se
                 <ArrowRightIcon className="w-5 h-5" aria-hidden="true" />
@@ -75,9 +82,30 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Coluna direita — ocupada pela imagem absoluta acima */}
+          {/* Coluna direita — ocupada pela imagem absoluta no desktop */}
           <div className="hidden lg:block" />
         </div>
+      </div>
+
+      {/* Imagem — celular e tablet */}
+      <div
+        className="relative lg:hidden mt-10 h-[300px] sm:h-[380px] md:h-[440px]"
+        aria-hidden="true"
+      >
+        <Image
+          src="/cao2.png"
+          alt=""
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
+          priority
+        />
+
+        {/* Transição entre o fundo do Hero e a fotografia */}
+        <div
+          className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-primary-900 to-transparent"
+          aria-hidden="true"
+        />
       </div>
     </section>
   );
