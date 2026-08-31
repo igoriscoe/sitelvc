@@ -48,24 +48,33 @@ export async function POST(request: Request) {
       );
     }
 
-    const pagamento = await preference.create({
-      body: {
-        items: [
-          {
-            id: "LVC-2026-01",
-            title: "Curso de Leishmaniose Visceral Canina - Turma 2026",
-            quantity: 1,
-            unit_price: 2400,
-            currency_id: "BRL",
-          },
-        ],
-        payer: {
-          name: body.nome,
-          email: body.email,
-        },
-        external_reference: data.id,
+   const pagamento = await preference.create({
+  body: {
+    items: [
+      {
+        id: "LVC-2026-01",
+        title: "Curso de Leishmaniose Visceral Canina - Turma 2026",
+        quantity: 1,
+        unit_price: 2400,
+        currency_id: "BRL",
       },
-    });
+    ],
+    payer: {
+      name: body.nome,
+      email: body.email,
+    },
+
+    external_reference: data.id,
+
+    back_urls: {
+      success: "https://sitelvc.vercel.app/inscricao/sucesso",
+      failure: "https://sitelvc.vercel.app/inscricao/erro",
+      pending: "https://sitelvc.vercel.app/inscricao/pendente",
+    },
+
+    auto_return: "approved",
+  },
+});
 
     return NextResponse.json(
       {
