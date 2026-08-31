@@ -36,7 +36,7 @@ export const instructors: Instructor[] = [
     shortName: "Patricia",
     institution: "Universidade Federal de Santa Catarina — UFSC",
     photo: "/Patricia.jpeg",
-    shortBio: "Bióloga, mestre e doutora em Ciências da Saúde e professora da UFSC. Atua em Parasitologia e Protozoologia, com experiência em leishmanioses, diagnóstico, epidemiologia molecular e estudos envolvendo Leishmania, seus reservatórios e vetores.",
+    shortBio: "Bióloga, mestre e doutora em Ciências da Saúde pela Fiocruz Minas, com pós-doutorado na Charité Universitätsmedizin Berlin, na Alemanha. É professora da Universidade Federal de Santa Catarina (UFSC) e atua nas áreas de Parasitologia e Protozoologia, com experiência em leishmanioses, diagnóstico e epidemiologia molecular. Desenvolve pesquisas envolvendo Leishmania, seus reservatórios e vetores, incluindo aspectos relacionados à biologia, variabilidade genética, virulência e patogenicidade do parasito.",
     education: [
       {
         degree: "Doutorado em Ciências da Saúde",
