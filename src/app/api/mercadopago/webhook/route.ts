@@ -81,6 +81,7 @@ export async function POST(request: Request) {
       .from("inscricoes")
       .update({
         status_pagamento: statusPagamento,
+        mercadopago_payment_id: String(pagamento.id),
         pago_em: pagoEm,
       })
       .eq("id", inscricaoId);
