@@ -28,7 +28,7 @@ export default function FAQPage() {
           <p className="text-slate-600 text-sm mb-4">
             Não encontrou o que procurava?
           </p>
-          <p className="text-slate-500 text-sm">[Inserir e-mail de contato]</p>
+          <p className="text-slate-500 text-sm">rismotechcursos@gmail.com</p>
         </div>
       </div>
     </div>

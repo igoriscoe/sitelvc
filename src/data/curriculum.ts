@@ -102,7 +102,7 @@ export const curriculum: CurriculumModule[] = [
     title: "Práticas de Coleta e Processamento de Amostras",
     workload: "4h",
     modality: "Prática",
-    instructors: "Natália Kolodin / Cibele Fraga / Patricia Quaresma",
+    instructors: "Natália Kolodin / Cibele Fraga / Patricia Quaresma/ Amábilli Rosar",
     sections: [
       {
         title: "Turma 1",
@@ -136,7 +136,7 @@ export const curriculum: CurriculumModule[] = [
     title: "",
     workload: "4h",
     modality: "Prática",
-    instructors: "Natália Kolodin / Cibele Fraga / Patricia Quaresma",
+    instructors: "Natália Kolodin / Cibele Fraga / Patricia Quaresma/ Amábilli Rosar",
     sections: [
       {
         title: "Turma 1",

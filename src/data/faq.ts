@@ -14,7 +14,7 @@ export const faqItems: FAQItem[] = [
     id: "publico-alvo",
     question: "Para quem é destinado o curso?",
     answer:
-      "Esse curso é destinado a médicos-veterinários interessados em aprofundar seus conhecimentos sobre diagnóstico e acompanhamento da leishmaniose visceral canina.",
+      "Esse curso é destinado a médicos-veterinários  e estudantes de Medicina Veterinária  interessados em aprofundar seus conhecimentos sobre diagnóstico e acompanhamento da leishmaniose visceral canina.",
   },
   {
     id: "pre-requisitos",
@@ -50,7 +50,7 @@ export const faqItems: FAQItem[] = [
     id: "cancelamento",
     question: "Como funciona o cancelamento ou reembolso?",
     answer:
-      "O cancelamento da inscrição deve ser solicitado por escrito. Reembolsos serão concedidos conforme a política do curso, podendo haver deduções de taxas administrativas. Recomenda-se consultar os detalhes específicos no momento da inscrição.",
+      "O cancelamento da inscrição deverá ser solicitado pelo e-mail rismotechcursos@gmail.com. As condições de reembolso variam conforme a data da solicitação e a proximidade do início do curso, sempre observados os direitos assegurados pela legislação aplicável. Quando devido, o reembolso será processado por meio da plataforma de pagamento utilizada na compra. Os prazos e procedimentos para efetivação do crédito ou estorno poderão variar conforme o meio de pagamento e a instituição financeira do participante. Consulte a Política de Cancelamento e Reembolso para conhecer todas as condições.",
   },
   {
     id: "local",

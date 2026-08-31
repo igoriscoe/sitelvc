@@ -15,10 +15,11 @@ export default function CourseOverview() {
           <div>
             <SectionTitle
               eyebrow="O Curso"
-              title="Uma capacitação completa sobre LVC"
+              title="Capacitação teórico-prática em LVC"
               subtitle={courseData.shortDescription}
               align="left"
             />
+
             <div className="mt-8">
               <CTAButton href="/o-curso" variant="outline" size="md">
                 Saiba mais sobre o curso
@@ -31,24 +32,30 @@ export default function CourseOverview() {
             <p className="text-sm font-semibold tracking-widest uppercase text-primary-700 mb-3">
               Público-alvo
             </p>
+
             <h2 className="font-heading text-2xl font-bold text-[#1A2B35] mb-3">
               Para quem é este curso?
             </h2>
-            <p className="text-slate-600 leading-relaxed mb-5">
+
+            <p className="text-slate-600 leading-relaxed mb-5 text-justify hyphens-auto">
               {courseData.targetAudience.summary}
             </p>
 
-            <ul className="space-y-2" aria-label="Grupos do público-alvo">
+            <ul
+              className="space-y-2"
+              aria-label="Grupos do público-alvo"
+            >
               {courseData.targetAudience.groups.map((group, i) => (
                 <li
                   key={i}
-                  className="flex items-center gap-3 text-sm text-slate-700"
+                  className="flex items-start gap-3 text-sm text-slate-700"
                 >
                   <span
-                    className="w-2 h-2 rounded-full bg-accent-500 flex-shrink-0"
+                    className="w-2 h-2 rounded-full bg-accent-500 flex-shrink-0 mt-2"
                     aria-hidden="true"
                   />
-                  {group.label}
+
+                  <span>{group.label}</span>
                 </li>
               ))}
             </ul>
@@ -59,6 +66,7 @@ export default function CourseOverview() {
               </p>
             )}
           </div>
+
         </div>
       </div>
     </section>

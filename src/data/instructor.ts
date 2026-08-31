@@ -36,7 +36,7 @@ export const instructors: Instructor[] = [
     shortName: "Patricia",
     institution: "Universidade Federal de Santa Catarina — UFSC",
     photo: "/Patricia.jpeg",
-    shortBio: "Patricia Flávia Quaresma é bióloga pela Universidade Federal de Ouro Preto (UFOP), mestre e doutora em Ciências da Saúde, com ênfase em Doenças Infecciosas e Parasitárias, pela Fiocruz Minas, e realizou pós-doutorado na Charité Universitätsmedizin Berlin, Alemanha. É professora da Universidade Federal de Santa Catarina (UFSC) e pesquisadora do Laboratório de Protozoologia, com atuação em Parasitologia e Protozoologia. Desenvolve pesquisas sobre leishmanioses e espécies de Leishmania, seus reservatórios e vetores, além de aspectos relacionados à biologia, virulência, epidemiologia molecular e variabilidade genética desses parasitos.",
+    shortBio: "Bióloga, mestre e doutora em Ciências da Saúde e professora da UFSC. Atua em Parasitologia e Protozoologia, com experiência em leishmanioses, diagnóstico, epidemiologia molecular e estudos envolvendo Leishmania, seus reservatórios e vetores.",
     education: [
       {
         degree: "Doutorado em Ciências da Saúde",
@@ -68,7 +68,7 @@ export const instructors: Instructor[] = [
     shortName: "Cibele",
     institution: "Universidade do Sul de Santa Catarina — Unisul",
     photo: "/Cibele.jpeg",
-    shortBio: "[Inserir apresentação resumida]",
+    shortBio: "Médica-veterinária pela UFRGS, mestre em Ciências Veterinárias e doutoranda em Biotecnologia e Biociências pela UFSC. É docente do curso de Medicina Veterinária da Unisul e atua na clínica de cães e gatos e no diagnóstico por imagem. Possui experiência em pesquisa e diagnóstico de zoonoses, incluindo leishmaniose.",
     education: [
       {
         degree: "Doutorado em Andamento em Biociências e Biotecnologia",
@@ -108,7 +108,7 @@ export const instructors: Instructor[] = [
     shortName: "Natalia",
     institution: "Prefeitura Municipal de Florianópolis — PMF",
     photo: "/Natália.jpeg",
-    shortBio: "[Inserir apresentação resumida]",
+    shortBio: "Médica-veterinária pela Universidade do Estado de Santa Catarina (UDESC). Atua como médica-veterinária da Prefeitura Municipal de Florianópolis, com experiência em vigilância e controle de zoonoses e atuação relacionada à leishmaniose visceral canina.",
     education: [
       {
         degree: "[Inserir grau acadêmico]",
@@ -138,7 +138,7 @@ export const instructors: Instructor[] = [
     shortName: "Amábilli",
     institution: "UFSC/Hospital Municipal Veterinário",
     photo: "/Amábilli2.png",
-    shortBio: "[Inserir apresentação resumida]",
+    shortBio: "Médica-veterinária pela UFSC, mestre e doutoranda em Biotecnologia e Biociências, com período de doutorado sanduíche no Instituto de Salud Carlos III, na Espanha. Possui experiência em clínica de pequenos animais, zoonoses e Saúde Única, com atuação no diagnóstico, tratamento e monitoramento de cães com leishmaniose visceral canina.",
     education: [
       {
         degree: "[Inserir grau acadêmico]",

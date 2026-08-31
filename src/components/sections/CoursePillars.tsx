@@ -24,8 +24,8 @@ export default function CoursePillars() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
           eyebrow="Pilares do curso"
-          title="Três áreas de formação integradas"
-          subtitle="O curso aborda de forma integrada os principais aspectos do diagnóstico e monitoramento da Leishmaniose Visceral Canina."
+          title="Três eixos de formação integrados"
+          subtitle="O curso integra conhecimentos e práticas aplicados ao diagnóstico e ao acompanhamento clínico e laboratorial da Leishmaniose Visceral Canina."
           className="mb-12"
         />
 

@@ -9,7 +9,7 @@ export const courseData = {
   type: "Curso teórico e prático",
 
   shortDescription:
-    "[Inserir descrição resumida do curso — 2 a 3 frases apresentando o propósito e o diferencial da capacitação]",
+    "Capacitação teórico-prática voltada ao diagnóstico e ao acompanhamento da Leishmaniose Visceral Canina, integrando fundamentos científicos à rotina clínica e laboratorial. O curso combina discussão de casos, interpretação de resultados e atividades práticas para uma abordagem integrada do paciente com LVC.",
 
   context:
     "A leishmaniose visceral canina representa um importante desafio para a prática clínica veterinária e para a saúde pública. A diversidade das manifestações clínicas, as limitações inerentes aos diferentes métodos diagnósticos e a necessidade de acompanhamento adequado dos animais em tratamento exigem do profissional conhecimento atualizado e capacidade de integrar informações clínicas, laboratoriais e epidemiológicas.\n\nNesse contexto, o curso propõe uma abordagem teórico-prática da LVC, aproximando os fundamentos científicos das situações encontradas na rotina profissional. A capacitação contempla desde o reconhecimento das manifestações clínicas e a obtenção adequada de amostras biológicas até a aplicação e interpretação de métodos diagnósticos e o monitoramento das funções renal e hepática e da resposta terapêutica.",
@@ -31,9 +31,10 @@ export const courseData = {
     summary:
       "O curso é destinado principalmente a médicos-veterinários e estudantes de Medicina Veterinária interessados em aprofundar seus conhecimentos sobre diagnóstico e acompanhamento da leishmaniose visceral canina.",
     groups: [
-      { label: "Médicos-veterinários que atuam ou pretendem atuar na clínica de pequenos animais" },
-      { label: "Médicos-veterinários envolvidos em diagnóstico laboratorial e análises clínicas veterinárias" },
-      { label: "Profissionais que atuam em vigilância e controle de zoonoses" },
+      { label: "Médicos-veterinários que atuam ou pretendem atuar na clínica de pequenos animais." },
+      { label: "Médicos-veterinários envolvidos em diagnóstico laboratorial e análises clínicas veterinárias." },
+      { label: "Estudantes de Medicina Veterinária interessados em aprofundar sua formação em leishmaniose visceral canina." },
+
     ],
     note: "Para participação nas atividades práticas, poderão ser estabelecidos pré-requisitos específicos conforme a natureza dos procedimentos realizados.",
   },
@@ -41,23 +42,23 @@ export const courseData = {
   pillars: [
     {
       id: "diagnostico-clinico",
-      title: "Diagnóstico Clínico",
+      title: "Diagnóstico Clínico e Parasitológico",
       description:
-        "[Inserir descrição breve: o que o participante aprenderá sobre avaliação clínica do cão com LVC]",
+        "Reconhecimento das manifestações clínicas da LVC, avaliação do paciente e aplicação de métodos parasitológicos para investigação diagnóstica.",
       icon: "clipboard-document" as const,
     },
     {
       id: "diagnostico-laboratorial",
-      title: "Diagnóstico Laboratorial",
+      title: "Diagnóstico Imunológico e Molecular",
       description:
-        "[Inserir descrição breve: técnicas laboratoriais abordadas para diagnóstico de LVC]",
+        "Fundamentos, aplicação e interpretação de métodos imunológicos e moleculares utilizados no diagnóstico da LVC.",
       icon: "beaker" as const,
     },
     {
       id: "monitoramento",
-      title: "Monitoramento do Tratamento",
+      title: "Avaliação Clínica e Laboratorial das Funções Renal e Hepática",
       description:
-        "[Inserir descrição breve: como acompanhar a resposta ao tratamento e monitorar o paciente canino]",
+        "Interpretação integrada de parâmetros clínicos e laboratoriais para avaliação do paciente e monitoramento da resposta ao tratamento.",
       icon: "chart-bar" as const,
     },
   ],

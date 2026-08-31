@@ -4,13 +4,17 @@ import { courseData } from "@/data/course";
 const footerNavLinks = [
   { href: "/o-curso", label: "O Curso" },
   { href: "/conteudo", label: "Conteúdo Programático" },
-  { href: "/professora", label: "Professora" },
+  { href: "/professora", label: "Corpo Docente" },
   { href: "/turmas", label: "Turmas e Inscrições" },
   { href: "/faq", label: "Perguntas Frequentes" },
 ];
 
 const legalLinks = [
   { href: "/politica-de-privacidade", label: "Política de Privacidade" },
+  {
+    href: "/politica-de-cancelamento",
+    label: "Cancelamento e Reembolso",
+  },
 ];
 
 export default function Footer() {
@@ -26,9 +30,11 @@ export default function Footer() {
             <p className="font-heading font-bold text-white text-lg mb-2 leading-snug">
               {courseData.name}
             </p>
+
             <p className="text-sm text-primary-300 mb-3 leading-relaxed">
               {courseData.subtitle}
             </p>
+
             <p className="text-xs text-primary-400">
               {courseData.type}
             </p>
@@ -39,6 +45,7 @@ export default function Footer() {
             <h2 className="font-heading font-semibold text-white text-xs uppercase tracking-wider mb-4">
               Navegação
             </h2>
+
             <ul className="space-y-2">
               {footerNavLinks.map((link) => (
                 <li key={link.href}>
@@ -59,22 +66,32 @@ export default function Footer() {
             <h2 className="font-heading font-semibold text-white text-xs uppercase tracking-wider mb-4">
               Contato
             </h2>
+
             <div className="space-y-2 text-sm text-primary-300">
-              <p>[Inserir e-mail de contato]</p>
-              <p>[Inserir Instagram, se houver]</p>
+              <a
+                href="mailto:rismotechcursos@gmail.com"
+                className="hover:text-white transition-colors
+                           focus-visible:outline-none focus-visible:underline"
+              >
+                rismotechcursos@gmail.com
+              </a>
             </div>
           </div>
         </div>
 
         {/* Barra inferior */}
         <div className="mt-10 pt-8 border-t border-primary-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-primary-400">
-          <p>© {year} Leishmaniose Visceral Canina. Todos os direitos reservados.</p>
+          <p>
+            © {year} RismoTech. Todos os direitos reservados.
+          </p>
+
           <div className="flex flex-wrap justify-center gap-4">
             {legalLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="hover:text-primary-200 transition-colors focus-visible:outline-none focus-visible:underline"
+                className="hover:text-primary-200 transition-colors
+                           focus-visible:outline-none focus-visible:underline"
               >
                 {link.label}
               </Link>

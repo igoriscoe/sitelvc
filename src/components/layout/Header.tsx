@@ -10,7 +10,7 @@ const navLinks = [
   { href: "/", label: "Início" },
   { href: "/o-curso", label: "O Curso" },
   { href: "/conteudo", label: "Conteúdo" },
-  { href: "/professora", label: "Professora" },
+  { href: "/professora", label: "Corpo Docente" },
   { href: "/turmas", label: "Turmas" },
   { href: "/faq", label: "FAQ" },
 ];
