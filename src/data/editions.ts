@@ -64,7 +64,7 @@ export const editions: Edition[] = [
     venue: "Unisul",
     address: "Rua Antônio Dib Mussi, 366, Florianópolis, Santa Catarina",
     workload: "16h",
-    totalSpots: 20,
+    totalSpots: 15,
     availableSpots: undefined,
     price: {
       full: 2400,
@@ -77,7 +77,7 @@ export const editions: Edition[] = [
       installments: undefined,
       notes: undefined,
     },
-    registrationUrl: undefined,
+    registrationUrl: "/subscriptions",
     notes: undefined,
     isNext: true,
   },

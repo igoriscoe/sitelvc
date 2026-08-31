@@ -14,48 +14,48 @@ export const faqItems: FAQItem[] = [
     id: "publico-alvo",
     question: "Para quem é destinado o curso?",
     answer:
-      "[Inserir resposta: descrever o perfil do participante ideal, área de atuação e interesse na temática]",
+      "Esse curso é destinado a médicos-veterinários interessados em aprofundar seus conhecimentos sobre diagnóstico e acompanhamento da leishmaniose visceral canina.",
   },
   {
     id: "pre-requisitos",
     question: "Existem pré-requisitos para participar?",
     answer:
-      "[Inserir resposta: informar se é necessária formação específica ou conhecimento prévio sobre LVC]",
+      "Possuir CRMV ativo e experiência prévia em clínica de pequenos animais. Para participação nas atividades práticas, poderão ser estabelecidos pré-requisitos específicos conforme a natureza dos procedimentos realizados.",
   },
   {
     id: "parte-pratica",
     question: "Como funciona a parte prática?",
     answer:
-      "[Inserir resposta: descrever as atividades práticas, o ambiente laboratorial, os materiais utilizados e o que o participante realizará]",
+      "As aulas práticas incluem demonstrações e realização orientada de procedimentos de coleta de amostras biológicas, análise e interpretação de resultados laboratoriais, e discussão de parâmetros utilizados no monitoramento clínico e laboratorial durante e após o tratamento.",
   },
   {
     id: "certificado",
     question: "O curso oferece certificado?",
     answer:
-      "[Inserir resposta: informar sobre a emissão de certificado, carga horária certificada e quem o emite]",
+      "Sim, ao final do curso, os participantes receberão um certificado de conclusão, desde que tenham cumprido os requisitos de participação e aproveitamento estabelecidos.",
   },
   {
     id: "carga-horaria",
     question: "Qual é a carga horária total do curso?",
     answer:
-      "[Inserir resposta: informar a carga horária teórica, prática e total]",
+      "A carga horária total do curso é de 16 horas, sendo dividida entre aulas teóricas e práticas.",
   },
   {
     id: "o-que-inclui",
     question: "O que está incluído na inscrição?",
     answer:
-      "[Inserir resposta: listar o que está incluso, ex: material didático, coffee break, acesso a materiais de apoio após o curso]",
+      "A inscrição inclui acesso a todas as aulas teóricas e práticas, materiais didáticos fornecidos durante o curso, coffee breaks e certificado de conclusão. Eventuais custos adicionais, como transporte e hospedagem, não estão incluídos.",
   },
   {
     id: "cancelamento",
     question: "Como funciona o cancelamento ou reembolso?",
     answer:
-      "[Inserir resposta: descrever a política de cancelamento, prazo para reembolso e eventuais deduções]",
+      "O cancelamento da inscrição deve ser solicitado por escrito. Reembolsos serão concedidos conforme a política do curso, podendo haver deduções de taxas administrativas. Recomenda-se consultar os detalhes específicos no momento da inscrição.",
   },
   {
     id: "local",
     question: "Onde o curso será realizado?",
     answer:
-      "[Inserir resposta: informar a cidade, o estado e o tipo de ambiente onde o curso ocorre]",
+      "As aulas teóricas do curso serão realizadas na Universidade do Sul de Santa Catarina – Unisul, Unidade Ilha, localizada na Rua Antônio Dib Mussi, 366, Florianópolis. As atividades práticas serão desenvolvidas na Clínica Médica Veterinária, localizada na Avenida Rio Branco, 701, Centro, Florianópolis. Informações complementares e orientações de acesso serão encaminhadas aos participantes antes do início do curso.",
   },
 ];

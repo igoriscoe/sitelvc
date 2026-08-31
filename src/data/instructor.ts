@@ -15,11 +15,9 @@ export interface Instructor {
   title: string;
   shortName: string;
   institution: string;
-  department: string;
   /** Caminho para a foto — substituir por caminho real quando disponível */
   photo: string | null;
   shortBio: string;
-  fullBio: string;
   education: { degree: string; institution: string; year: string }[];
   experience: string[];
   researchAreas: string[];
@@ -37,10 +35,8 @@ export const instructors: Instructor[] = [
     title: "[Inserir titulação]",
     shortName: "Patricia",
     institution: "Universidade Federal de Santa Catarina — UFSC",
-    department: "[Inserir departamento e centro]",
     photo: "/Patricia.jpeg",
-    shortBio: "[Inserir apresentação resumida]",
-    fullBio: "[Inserir biografia completa]",
+    shortBio: "Patricia Flávia Quaresma é bióloga pela Universidade Federal de Ouro Preto (UFOP), mestre e doutora em Ciências da Saúde, com ênfase em Doenças Infecciosas e Parasitárias, pela Fiocruz Minas, e realizou pós-doutorado na Charité Universitätsmedizin Berlin, Alemanha. É professora da Universidade Federal de Santa Catarina (UFSC) e pesquisadora do Laboratório de Protozoologia, com atuação em Parasitologia e Protozoologia. Desenvolve pesquisas sobre leishmanioses e espécies de Leishmania, seus reservatórios e vetores, além de aspectos relacionados à biologia, virulência, epidemiologia molecular e variabilidade genética desses parasitos.",
     education: [
       {
         degree: "Doutorado em Ciências da Saúde",
@@ -61,47 +57,88 @@ export const instructors: Instructor[] = [
     researchAreas: [
       "[Inserir linha de pesquisa relacionada à LVC ou área correlata]",
     ],
-    lattesUrl: "[Inserir URL do Currículo Lattes]",
+    lattesUrl: "http://lattes.cnpq.br/7610329632099030",
     contactEmail: null,
   },
   {
     id: "cibele",
     role: "coordinator",
-    name: "Cibele Fraga",
+    name: "Cibele Floriano Fraga",
     title: "[Inserir titulação]",
     shortName: "Cibele",
     institution: "Universidade do Sul de Santa Catarina — Unisul",
-    department: "[Inserir departamento]",
     photo: "/Cibele.jpeg",
     shortBio: "[Inserir apresentação resumida]",
-    fullBio: "[Inserir biografia completa]",
     education: [
       {
-        degree: "[Inserir grau acadêmico]",
-        institution: "[Inserir instituição]",
-        year: "[Inserir ano]",
+        degree: "Doutorado em Andamento em Biociências e Biotecnologia",
+        institution: "Universidade Federal de Santa Catarina, UFSC",
+        year: "[Inserir ano de conclusão]",
+      },
+      {
+        degree: "Mestrado em Ciências Veterinárias",
+        institution: "Universidade Federal do Rio Grande do Sul, UFRGS",
+        year: "2017",
+      },
+      {
+        degree: "Graduação em Medicina Veterinária",
+        institution: "Universidade Federal do Rio Grande do Sul, UFRGS",
+        year: "2015",
       },
     ],
     experience: [
       "[Inserir experiência profissional ou acadêmica relevante 1]",
     ],
     researchAreas: [
-      "[Inserir linha de pesquisa]",
+      "Clínica Veterinária",
+      "Ultrassonografia veterinária",
+      "Radiologia de Animais",
+      "Doenças Infecciosas de Animais",
+      "Saúde Pública",
+      "Micologia",
     ],
-    lattesUrl: "[Inserir URL do Currículo Lattes]",
+    lattesUrl: "http://lattes.cnpq.br/9568840415510075",
     contactEmail: null,
   },
   {
     id: "natalia",
     role: "instructor",
-    name: "Natália Ferrari",
+    name: "Natalia Kolodin Ferrari",
     title: "[Inserir titulação]",
-    shortName: "Natália",
+    shortName: "Natalia",
     institution: "Prefeitura Municipal de Florianópolis — PMF",
-    department: "[Inserir setor/departamento]",
-    photo: null,
+    photo: "/Natália.jpeg",
     shortBio: "[Inserir apresentação resumida]",
-    fullBio: "[Inserir biografia completa]",
+    education: [
+      {
+        degree: "[Inserir grau acadêmico]",
+        institution: "[Inserir instituição]",
+        year: "[Inserir ano]",
+      },
+    ],
+    experience: [
+      "[Inserir experiência profissional ou acadêmica relevante 1]",
+    ],
+    researchAreas: [
+      "Clínica Veterinária",
+      "Ultrassonografia veterinária",
+      "Radiologia de Animais",
+      "Doenças Infecciosas de Animais",
+      "Saúde Pública",
+      "Micologia",
+    ],
+    lattesUrl: "http://lattes.cnpq.br/7499968212062256",
+    contactEmail: null,
+  },
+  {
+    id: "amabilli",
+    role: "instructor",
+    name: "Amábilli de Souza Rosar",
+    title: "[Inserir titulação]",
+    shortName: "Amábilli",
+    institution: "UFSC/Hospital Municipal Veterinário",
+    photo: "/Amábilli2.png",
+    shortBio: "[Inserir apresentação resumida]",
     education: [
       {
         degree: "[Inserir grau acadêmico]",
@@ -115,7 +152,7 @@ export const instructors: Instructor[] = [
     researchAreas: [
       "[Inserir linha de pesquisa]",
     ],
-    lattesUrl: "[Inserir URL do Currículo Lattes]",
+    lattesUrl: "http://lattes.cnpq.br/2005492827247468",
     contactEmail: null,
   },
 ];

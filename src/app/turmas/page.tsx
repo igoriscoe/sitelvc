@@ -167,7 +167,6 @@ export default function TurmasPage() {
                   {edition.registrationUrl ? (
                     <CTAButton
                       href={edition.registrationUrl}
-                      external
                       variant="primary"
                       size="md"
                     >

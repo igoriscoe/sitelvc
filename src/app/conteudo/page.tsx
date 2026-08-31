@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import SectionTitle from "@/components/ui/SectionTitle";
 import CTAButton from "@/components/ui/CTAButton";
-import { curriculum, workloadSummary } from "@/data/curriculum";
-import { BookOpenIcon, BeakerIcon } from "@heroicons/react/24/outline";
+import { curriculum, workloadSummary, type CurriculumModule, type CurriculumSection } from "@/data/curriculum";
 
 export const metadata: Metadata = {
   title: "Conteúdo Programático",
@@ -11,16 +10,13 @@ export const metadata: Metadata = {
 };
 
 export default function ConteudoPage() {
-  const theoryModules = curriculum.filter((m) => m.type === "theory");
-  const practiceModules = curriculum.filter((m) => m.type === "practice");
-
   return (
     <div className="py-16 md:py-24">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
           eyebrow="Conteúdo Programático"
-          title="O que você vai aprender"
-          subtitle="Estrutura de módulos teóricos e práticos do curso."
+          title="Cronograma detalhado"
+          subtitle="Estrutura completa das atividades teóricas e práticas do curso."
           align="left"
         />
 
@@ -43,55 +39,67 @@ export default function ConteudoPage() {
           ))}
         </div>
 
-        {/* Módulos teóricos */}
-        {theoryModules.length > 0 && (
-          <section aria-labelledby="teoria-titulo" className="mt-12">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-9 h-9 rounded-lg bg-primary-50 flex items-center justify-center">
-                <BookOpenIcon
-                  className="w-5 h-5 text-primary-700"
-                  aria-hidden="true"
-                />
-              </div>
-              <h2
-                id="teoria-titulo"
-                className="font-heading text-xl font-bold text-[#1A2B35]"
-              >
-                Módulos Teóricos
-              </h2>
-            </div>
-            <div className="space-y-4">
-              {theoryModules.map((mod) => (
-                <ModuleCard key={mod.id} module={mod} />
+        {/* Tabela — desktop */}
+        <div className="mt-10 hidden md:block overflow-hidden rounded-xl border border-slate-200">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="bg-primary-900 text-white text-left">
+                <th className="px-4 py-3 font-semibold text-xs uppercase tracking-wide w-[18%]">Dia / Período</th>
+                <th className="px-4 py-3 font-semibold text-xs uppercase tracking-wide">Conteúdo Programático</th>
+                <th className="px-4 py-3 font-semibold text-xs uppercase tracking-wide w-[10%] text-center">Carga Horária</th>
+                <th className="px-4 py-3 font-semibold text-xs uppercase tracking-wide w-[18%]">Modalidade</th>
+              </tr>
+            </thead>
+            <tbody>
+              {curriculum.map((mod, idx) => (
+                <tr key={mod.id} className={idx % 2 === 0 ? "bg-white" : "bg-slate-50/60"}>
+                  <td className="px-4 py-4 align-top border-t border-slate-100">
+                    <p className="font-semibold text-[#1A2B35]">{mod.period.label}</p>
+                    <p className="text-slate-500 mt-1">{mod.period.date}</p>
+                    <p className="text-slate-500">{mod.period.dayOfWeek}</p>
+                    <p className="text-slate-500">{mod.period.time}</p>
+                  </td>
+                  <td className="px-4 py-4 align-top border-t border-slate-100">
+                    <ContentCell module={mod} />
+                  </td>
+                  <td className="px-4 py-4 align-top border-t border-slate-100 text-center">
+                    <span className="font-semibold text-primary-700">{mod.workload}</span>
+                  </td>
+                  <td className="px-4 py-4 align-top border-t border-slate-100">
+                    <p className="font-semibold text-[#1A2B35]">{mod.modality}</p>
+                    <div className="text-slate-500 text-xs mt-1 space-y-0.5">
+                      {mod.instructors.split(" / ").map((name, i) => (
+                        <p key={i}>{name}</p>
+                      ))}
+                    </div>
+                  </td>
+                </tr>
               ))}
-            </div>
-          </section>
-        )}
+            </tbody>
+          </table>
+        </div>
 
-        {/* Módulos práticos */}
-        {practiceModules.length > 0 && (
-          <section aria-labelledby="pratica-titulo" className="mt-10">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-9 h-9 rounded-lg bg-accent-100 flex items-center justify-center">
-                <BeakerIcon
-                  className="w-5 h-5 text-accent-600"
-                  aria-hidden="true"
-                />
+        {/* Cards — mobile */}
+        <div className="mt-10 md:hidden space-y-6">
+          {curriculum.map((mod) => (
+            <div key={mod.id} className="border border-slate-200 rounded-xl overflow-hidden bg-white">
+              <div className="bg-primary-900 text-white px-4 py-3">
+                <p className="font-semibold">{mod.period.label}</p>
+                <p className="text-primary-200 text-xs mt-0.5">
+                  {mod.period.date} · {mod.period.dayOfWeek} · {mod.period.time}
+                </p>
               </div>
-              <h2
-                id="pratica-titulo"
-                className="font-heading text-xl font-bold text-[#1A2B35]"
-              >
-                Módulos Práticos
-              </h2>
+              <div className="px-4 py-4 space-y-3">
+                <div className="flex justify-between items-center">
+                  <span className="text-xs font-semibold text-primary-700 uppercase tracking-wide">{mod.modality}</span>
+                  <span className="text-xs font-bold text-primary-700 bg-primary-50 px-2 py-0.5 rounded-full">{mod.workload}</span>
+                </div>
+                <ContentCell module={mod} />
+                <p className="text-xs text-slate-400 border-t border-slate-100 pt-2">{mod.instructors}</p>
+              </div>
             </div>
-            <div className="space-y-4">
-              {practiceModules.map((mod) => (
-                <ModuleCard key={mod.id} module={mod} accent />
-              ))}
-            </div>
-          </section>
-        )}
+          ))}
+        </div>
 
         <div className="mt-12">
           <CTAButton href="/turmas" variant="primary" size="md">
@@ -103,79 +111,43 @@ export default function ConteudoPage() {
   );
 }
 
-import type { CurriculumModule } from "@/data/curriculum";
-
-function ModuleCard({
-  module: mod,
-  accent = false,
-}: {
-  module: CurriculumModule;
-  accent?: boolean;
-}) {
+function ContentCell({ module: mod }: { module: CurriculumModule }) {
+  const accent = mod.modality === "Prática";
   return (
-    <div className="border border-slate-200 rounded-xl overflow-hidden bg-white">
-      <div
-        className={`px-5 py-4 border-b border-slate-100 ${
-          accent ? "bg-accent-100/40" : "bg-primary-50/60"
-        }`}
-      >
-        <div className="flex items-center justify-between gap-4">
-          <h3 className="font-heading font-semibold text-[#1A2B35] text-base">
-            {mod.title}
-          </h3>
-          {mod.workload && (
-            <span className="text-xs text-slate-400 whitespace-nowrap">
-              {mod.workload}
-            </span>
-          )}
-        </div>
-        {mod.description && (
-          <p className="text-sm text-slate-500 mt-1">{mod.description}</p>
-        )}
-      </div>
+    <div>
+      {mod.title && (
+        <p className="font-semibold text-[#1A2B35] mb-2">{mod.title}</p>
+      )}
       {mod.sections ? (
-        <div className="px-5 py-3 space-y-4">
+        <div className="space-y-3">
           {mod.sections.map((section, si) => (
-            <div key={si} className={si > 0 ? "pt-3 border-t border-slate-100" : ""}>
-              <p className={`text-xs font-bold uppercase tracking-wider mb-1 ${
-                accent ? "text-accent-700" : "text-primary-700"
-              }`}>
+            <div key={si}>
+              <p className={`text-xs font-bold uppercase tracking-wide mb-1 ${accent ? "text-accent-600" : "text-primary-600"}`}>
                 {section.title}
               </p>
               {section.subtitle && (
-                <p className="text-sm font-semibold text-slate-700 mb-2">{section.subtitle}</p>
+                <p className="text-sm font-semibold text-[#1A2B35] mb-1">{section.subtitle}</p>
               )}
-              <ul className="space-y-1.5">
-                {section.topics.map((topic, ti) => (
-                  <li key={ti} className="flex items-start gap-3 text-sm text-slate-600">
-                    <span
-                      className={`w-1.5 h-1.5 rounded-full flex-shrink-0 mt-2 ${
-                        accent ? "bg-accent-400" : "bg-primary-400"
-                      }`}
-                      aria-hidden="true"
-                    />
-                    {topic.title}
-                  </li>
-                ))}
-              </ul>
+              <TopicList topics={section.topics} accent={accent} />
             </div>
           ))}
         </div>
       ) : (
-        <ul className="px-5 py-3 space-y-2">
-          {(mod.topics ?? []).map((topic, i) => (
-            <li key={i} className="flex items-start gap-3 text-sm text-slate-600">
-              <span
-                className={`w-1.5 h-1.5 rounded-full flex-shrink-0 mt-2 ${
-                  accent ? "bg-accent-400" : "bg-primary-400"
-                }`}
-                aria-hidden="true"
-              />
-              {topic.title}
-            </li>
-          ))}
-        </ul>
+        <TopicList topics={mod.topics ?? []} accent={accent} />
       )}
     </div>
+  );
+}
+
+function TopicList({ topics, accent }: { topics: { title: string }[]; accent: boolean }) {
+  return (
+    <ul className="space-y-1">
+      {topics.map((topic, i) => (
+        <li key={i} className="flex items-start gap-2 text-sm text-slate-600">
+          <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 mt-1.5 ${accent ? "bg-accent-400" : "bg-primary-400"}`} aria-hidden="true" />
+          {topic.title}
+        </li>
+      ))}
+    </ul>
   );
 }

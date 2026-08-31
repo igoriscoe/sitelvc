@@ -2,6 +2,7 @@ import { CheckCircleIcon } from "@heroicons/react/24/solid";
 import SectionTitle from "@/components/ui/SectionTitle";
 import CTAButton from "@/components/ui/CTAButton";
 import { courseData } from "@/data/course";
+import Image from "next/image";
 
 function ImagePlaceholder({
   label,
@@ -80,14 +81,21 @@ export default function TheoryAndPractice() {
 
           {/* Imagens placeholder */}
           <div className="grid grid-cols-2 gap-4">
-            <ImagePlaceholder
-              label="Foto de atividade laboratorial (a inserir)"
-              className="aspect-square"
-            />
-            <ImagePlaceholder
-              label="Foto de atividade prática (a inserir)"
-              className="aspect-square mt-8"
-            />
+         <Image
+    src="/AulaTorica1.png"
+    alt="Atividade teórica do curso"
+    width={600}
+    height={600}
+    className="aspect-square w-full rounded-2xl object-cover"
+  />
+
+  <Image
+    src="/AulaPratica2.png"
+    alt="Atividade prática do curso"
+    width={600}
+    height={600}
+    className="aspect-square mt-8 w-full rounded-2xl object-cover"
+  />
           </div>
         </div>
       </div>

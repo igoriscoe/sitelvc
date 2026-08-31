@@ -1,6 +1,7 @@
 /**
  * Conteúdo programático do curso.
- * Organizado por módulos teóricos e práticos.
+ * Estrutura espelha a tabela do cronograma detalhado:
+ * Dia/Período | Conteúdo Programático | Carga Horária | Modalidade
  */
 
 export interface CurriculumTopic {
@@ -9,30 +10,43 @@ export interface CurriculumTopic {
 
 export interface CurriculumSection {
   title: string;
-  /** Título da atividade dentro da turma, quando diferente do módulo principal */
   subtitle?: string;
   topics: CurriculumTopic[];
 }
 
 export interface CurriculumModule {
   id: string;
-  type: "theory" | "practice";
+  /** Coluna "Dia / Período" */
+  period: {
+    label: string;
+    date: string;
+    dayOfWeek: string;
+    time: string;
+  };
+  /** Coluna "Conteúdo Programático" */
   title: string;
-  description?: string;
-  workload?: string;
-  /** Tópicos simples sem subdivisão */
   topics?: CurriculumTopic[];
-  /** Sub-seções com título próprio e tópicos */
   sections?: CurriculumSection[];
+  /** Coluna "Carga Horária" */
+  workload: string;
+  /** Coluna "Modalidade" */
+  modality: string;
+  instructors: string;
 }
 
 export const curriculum: CurriculumModule[] = [
   {
     id: "dia1-manha",
-    type: "theory",
+    period: {
+      label: "Dia 1 — Manhã",
+      date: "02/10/2026",
+      dayOfWeek: "6ª feira",
+      time: "08h – 12h",
+    },
     title: "Abertura e Introdução à Leishmaniose Visceral Canina",
-    description: "Dia 1 — 02/10/2026 (6ª feira) · Manhã · 08h–12h · Patricia Quaresma / Cibele Fraga",
     workload: "4h",
+    modality: "Teórica",
+    instructors: "Patricia Quaresma / Cibele Fraga",
     topics: [
       { title: "Situação epidemiológica da LVC no Brasil e em Santa Catarina" },
       { title: "Agente etiológico, vetor e ciclo biológico" },
@@ -41,45 +55,108 @@ export const curriculum: CurriculumModule[] = [
   },
   {
     id: "dia1-tarde",
-    type: "theory",
-    title: "Diagnósticos Clínico e Parasitológico, Imunológico e Molecular / Avaliação Clínica e Laboratorial das Funções Renal e Hepática",
-    description: "Dia 1 — 02/10/2026 (6ª feira) · Tarde · 13h–17h · Natália Kolodin / Patricia Quaresma",
+    period: {
+      label: "Dia 1 — Tarde",
+      date: "02/10/2026",
+      dayOfWeek: "6ª feira",
+      time: "13h – 17h",
+    },
+    title: "",
     workload: "4h",
-    topics: [
-      { title: "Principais sinais clínicos e diagnósticos diferenciais" },
-      { title: "Métodos parasitológicos: citologia de linfonodo, medula óssea e biópsia de pele" },
-      { title: "Testes sorológicos: TR DPP®, ELISA e suas limitações" },
-      { title: "Princípios do PCR e qPCR para detecção de Leishmania infantum" },
-      { title: "Interpretação de resultados laboratoriais e confirmação diagnóstica" },
-      { title: "Interpretação de exames bioquímicos (ureia, creatinina, ALT, AST, FA, proteínas séricas)" },
-      { title: "Monitoramento da resposta terapêutica e da toxicidade medicamentosa" },
-      { title: "Tomada de decisão clínica ao longo do curso da infecção" },
+    modality: "Teórica",
+    instructors: "Natália Kolodin / Patricia Quaresma",
+    sections: [
+      {
+        title: "Diagnóstico Clínico e Parasitológico",
+        topics: [
+          { title: "Principais sinais clínicos e diagnósticos diferenciais" },
+          { title: "Métodos parasitológicos: citologia de linfonodo, medula óssea e biópsia de pele" },
+        ],
+      },
+      {
+        title: "Diagnóstico Imunológico e Molecular",
+        topics: [
+          { title: "Testes sorológicos: TR DPP®, ELISA e suas limitações" },
+          { title: "Princípios do PCR e qPCR para detecção de Leishmania infantum" },
+          { title: "Interpretação de resultados laboratoriais e confirmação diagnóstica" },
+        ],
+      },
+      {
+        title: "Avaliação Clínica e Laboratorial das Funções Renal e Hepática",
+        topics: [
+          { title: "Interpretação de exames bioquímicos (ureia, creatinina, ALT, AST, FA, proteínas séricas)" },
+          { title: "Monitoramento da resposta terapêutica e da toxicidade medicamentosa" },
+          { title: "Tomada de decisão clínica ao longo do curso da infecção" },
+        ],
+      },
     ],
   },
   {
-    id: "dia2-coleta",
-    type: "practice",
-    title: "Coleta e Processamento de Amostras Biológicas",
-    description: "Dia 2 — 03/10/2026 (sábado) · Manhã e Tarde · 08h–12h / 13h–17h · As turmas se revezam · Natália Kolodin / Cibele Fraga / Patricia Quaresma",
+    id: "dia2-manha",
+    period: {
+      label: "Dia 2 — Manhã",
+      date: "03/10/2026",
+      dayOfWeek: "Sábado",
+      time: "08h – 12h",
+    },
+    title: "Práticas de Coleta e Processamento de Amostras",
     workload: "4h",
-    topics: [
-      { title: "Coleta de sangue venoso e preparo para sorologia e PCR" },
-      { title: "Coleta de biópsia de pele, aspirado de linfonodo e medula óssea" },
-      { title: "Demonstração de preparação e coloração de lâminas" },
-      { title: "Condições de biossegurança e armazenamento de material biológico" },
+    modality: "Prática",
+    instructors: "Natália Kolodin / Cibele Fraga / Patricia Quaresma",
+    sections: [
+      {
+        title: "Turma 1",
+        topics: [
+          { title: "Coleta de sangue venoso e preparo para sorologia e PCR" },
+          { title: "Coleta de biópsia de pele, de aspirado de linfonodo e medula óssea" },
+          { title: "Demonstração de preparação e coloração de lâminas" },
+          { title: "Condições de biossegurança e armazenamento de material biológico" },
+        ],
+      },
+      {
+        title: "Turma 2",
+        subtitle: "Análise Prática de Lâminas e Interpretação Diagnóstica",
+        topics: [
+          { title: "Observação microscópica de amastigotas" },
+          { title: "Discussão de casos clínicos reais" },
+          { title: "Exercício integrativo: correlação clínico-laboratorial e conduta terapêutica" },
+          { title: "Encerramento e entrega de certificados" },
+        ],
+      },
     ],
   },
   {
-    id: "dia2-laminas",
-    type: "practice",
-    title: "Análise de Lâminas e Interpretação Diagnóstica",
-    description: "Dia 2 — 03/10/2026 (sábado) · Manhã e Tarde · 08h–12h / 13h–17h · As turmas se revezam · Natália Kolodin / Cibele Fraga / Patricia Quaresma",
+    id: "dia2-tarde",
+    period: {
+      label: "Dia 2 — Tarde",
+      date: "03/10/2026",
+      dayOfWeek: "Sábado",
+      time: "13h – 17h",
+    },
+    title: "",
     workload: "4h",
-    topics: [
-      { title: "Observação microscópica de amastigotas" },
-      { title: "Discussão de casos clínicos reais" },
-      { title: "Exercício integrativo: correlação clínico-laboratorial e conduta terapêutica" },
-      { title: "Encerramento e entrega de certificados" },
+    modality: "Prática",
+    instructors: "Natália Kolodin / Cibele Fraga / Patricia Quaresma",
+    sections: [
+      {
+        title: "Turma 1",
+        subtitle: "Análise Prática de Lâminas e Interpretação Diagnóstica",
+        topics: [
+          { title: "Observação microscópica de amastigotas" },
+          { title: "Discussão de casos clínicos reais" },
+          { title: "Exercício integrativo: correlação clínico-laboratorial e conduta terapêutica" },
+          { title: "Encerramento e entrega de certificados" },
+        ],
+      },
+      {
+        title: "Turma 2",
+        topics: [
+          { title: "Coleta de sangue venoso e preparo para sorologia e PCR" },
+          { title: "Coleta de biópsia de pele, de aspirado de linfonodo e medula óssea" },
+          { title: "Demonstração de preparação e coloração de lâminas" },
+          { title: "Condições de biossegurança e armazenamento de material biológico" },
+        ],
+      },
     ],
   },
 ];

@@ -34,7 +34,6 @@ export const courseData = {
       { label: "Médicos-veterinários que atuam ou pretendem atuar na clínica de pequenos animais" },
       { label: "Médicos-veterinários envolvidos em diagnóstico laboratorial e análises clínicas veterinárias" },
       { label: "Profissionais que atuam em vigilância e controle de zoonoses" },
-      { label: "Estudantes de Medicina Veterinária em fase de formação clínica" },
     ],
     note: "Para participação nas atividades práticas, poderão ser estabelecidos pré-requisitos específicos conforme a natureza dos procedimentos realizados.",
   },
