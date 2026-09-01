@@ -8,7 +8,7 @@ import {
 import SectionTitle from "@/components/ui/SectionTitle";
 import CTAButton from "@/components/ui/CTAButton";
 import { getNextEdition } from "@/data/editions";
-import { formatCurrency, editionStatusMap } from "@/lib/utils";
+import { editionStatusMap } from "@/lib/utils";
 import Link from "next/link";
 
 function InfoItem({
@@ -38,6 +38,7 @@ export default function NextEditionSection() {
   if (!edition) return null;
 
   const statusInfo = editionStatusMap[edition.status];
+
   const venueDisplay =
     edition.city && edition.state
       ? `${edition.venue} — ${edition.city}/${edition.state}`
@@ -63,9 +64,7 @@ export default function NextEditionSection() {
         />
 
         {/* Card da turma */}
-        <div
-          className="max-w-4xl mx-auto bg-white/10 rounded-2xl border border-white/20 p-6 md:p-8"
-        >
+        <div className="max-w-4xl mx-auto bg-white/10 rounded-2xl border border-white/20 p-6 md:p-8">
           {/* Status + label */}
           <div className="flex flex-wrap items-center gap-3 mb-6">
             <span
@@ -73,48 +72,63 @@ export default function NextEditionSection() {
             >
               {statusInfo.label}
             </span>
-            <span className="text-primary-300 text-sm">{edition.label}</span>
+
+            <span className="text-primary-300 text-sm">
+              {edition.label}
+            </span>
           </div>
 
           {/* Grid de informações */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-8">
             <InfoItem
-              icon={<CalendarDaysIcon className="w-5 h-5" aria-hidden="true" />}
+              icon={
+                <CalendarDaysIcon
+                  className="w-5 h-5"
+                  aria-hidden="true"
+                />
+              }
               label="Data"
               value={edition.date}
             />
+
             <InfoItem
-              icon={<ClockIcon className="w-5 h-5" aria-hidden="true" />}
+              icon={
+                <ClockIcon
+                  className="w-5 h-5"
+                  aria-hidden="true"
+                />
+              }
               label="Horário"
               value={edition.time}
             />
+
             <InfoItem
-              icon={<MapPinIcon className="w-5 h-5" aria-hidden="true" />}
+              icon={
+                <MapPinIcon
+                  className="w-5 h-5"
+                  aria-hidden="true"
+                />
+              }
               label="Local"
               value={venueDisplay}
             />
+
             <InfoItem
-              icon={<UserGroupIcon className="w-5 h-5" aria-hidden="true" />}
+              icon={
+                <UserGroupIcon
+                  className="w-5 h-5"
+                  aria-hidden="true"
+                />
+              }
               label="Vagas"
               value={spotsDisplay}
             />
           </div>
 
-          {/* Preço e CTA */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 pt-6 border-t border-white/20">
-            <div>
-              <p className="text-primary-300 text-xs uppercase tracking-wide font-medium mb-1">
-                Investimento
-              </p>
-              <p className="text-white text-2xl font-heading font-bold">
-                {formatCurrency(edition.price.full)}
-              </p>
-              {edition.price.notes && (
-                <p className="text-primary-300 text-xs mt-1">
-                  {edition.price.notes}
-                </p>
-              )}
-            </div>
+          {/* CTA */}
+          <div className="flex justify-center pt-6 border-t border-white/20">
+            {/* Mantém o espaço à esquerda para preservar o posicionamento do botão */}
+            <div />
 
             {edition.registrationUrl ? (
               <CTAButton
@@ -126,7 +140,11 @@ export default function NextEditionSection() {
                 Inscreva-se agora
               </CTAButton>
             ) : (
-              <CTAButton href="/turmas" variant="primary" size="lg">
+              <CTAButton
+                href="/turmas"
+                variant="primary"
+                size="lg"
+              >
                 Ver detalhes e inscrição
               </CTAButton>
             )}
