@@ -55,7 +55,7 @@ export async function POST(request: Request) {
         id: "LVC-2026-01",
         title: "Curso de Leishmaniose Visceral Canina - Turma 2026",
         quantity: 1,
-        unit_price: 10,
+        unit_price: 2400,
         currency_id: "BRL",
       },
     ],
